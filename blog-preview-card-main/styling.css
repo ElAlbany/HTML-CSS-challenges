@@ -1,0 +1,100 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    min-height: 120vh;
+    padding: 24px;
+
+    font-family:'Figtree', sans-serif;
+    background-color: hsl(47, 88%, 63%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    max-width: 350px;
+    padding: 24px;
+    margin: 0 auto;
+    background-color: white;
+
+    border-radius: 30px;
+    box-shadow: 10px 10px  black;
+}
+
+.container > img {
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 15px;
+}
+
+.learning {
+    background-color: hsl(47, 88%, 63%);
+    padding: 12px;
+    font-weight: 800;
+    font-size: smaller;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.date {
+    margin-bottom: 15px;
+    font-weight: 500;
+    font-size: smaller;
+}
+
+
+div h1 {
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+.description {
+    color: hsl(0, 0%, 42%);
+    line-height: 1.5;
+    font-size: smaller;
+    margin-bottom: 15px;
+}
+
+.person {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    
+}
+.person img {
+    width: 30px;
+    height: 30px;
+}
+.person b {
+    font-size: 12px;
+    font-weight: 800;
+}
+
+@media (min-width : 1000px){
+
+    body {
+        min-height: 100vh;
+    }
+    .container {
+        width: 420px;
+    }
+
+    div h1 {
+        font-size: 22px;
+    }
+
+    .description {
+        color: hsl(0, 0%, 42%);
+        line-height: 1.5;
+        margin-bottom: 15px;
+    }
+
+}
