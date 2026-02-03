@@ -1,87 +1,266 @@
+/* CSS Reset and Base Styles */
 * {
-    padding: 0px;
-    margin: 0px;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* Root variables for colors */
+:root {
+  --white: hsl(0, 0%, 100%);
+  --stone-100: hsl(30, 54%, 90%);
+  --stone-150: hsl(30, 18%, 87%);
+  --stone-600: hsl(30, 10%, 34%);
+  --stone-900: hsl(24, 5%, 18%);
+  --brown-800: hsl(14, 45%, 36%);
+  --rose-800: hsl(332, 51%, 32%);
+  --rose-50: hsl(330, 100%, 98%);
+}
 
+/* Typography */
 body {
-
-    background-color: hsl(30, 18%, 87%);
-    min-height: 200vh;
-    font-size: 16px;
-
-    line-height: 1.5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--stone-600);
+  background-color: var(--stone-100);
+  min-height: 100vh;
+  padding: 20px;
+  
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
-main {
-    width: 700px;
-    padding: 30px;
-    background-color: white;
-    border-radius: 15px;
-
-}
-
-img {
-    width: 100%;
-    height: 250px;
-    border-radius: 15px;
-    margin-bottom: 20px;
+h1, h2 {
+  font-family: 'Young Serif', serif;
+  font-weight: 400;
 }
 
 h1 {
-    margin-bottom: 20px;
+  font-size: 2.5rem;
+  line-height: 1;
+  color: var(--stone-900);
+  margin-bottom: 20px;
 }
+
 h2 {
-    margin-bottom: 10px;
-    color: hsl(14, 45%, 36%);
+  font-size: 1.75rem;
+  color: var(--brown-800);
+  margin-bottom: 20px;
 }
+
 h3 {
-    color: hsl(332, 51%, 32%);
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--rose-800);
+  margin-bottom: 15px;
 }
 
+/* Main Container */
+main {
+  max-width: 700px;
+  width: 100%;
+  background-color: var(--white);
+  border-radius: 20px;
+  padding: 40px;
+  margin: 60px 0;
+}
+
+/* Image */
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  display: block;
+}
+
+/* Description */
 .description {
-    margin-bottom: 20px;
+  margin-bottom: 30px;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
-
-.prep {
-    padding: 20px;
-    margin-bottom: 20px;
-    background-color: hsl(330, 100%, 98%);
-    border-radius: 15px;
-
+/* Preparation Time */
+.prep-time {
+  background-color: var(--rose-50);
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 30px;
 }
 
-ol , ul {
-    padding-left: 5px;
-    line-height: 1.8;
+.prep-time ul {
+  list-style-position: inside;
+  padding-left: 0;
 }
+
+.prep-time li {
+  margin-bottom: 8px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.prep-time li::marker {
+  color: var(--rose-800);
+}
+
+/* Sections */
+section {
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid var(--stone-150);
+}
+
+section:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+/* Lists */
+ul, ol {
+  padding-left: 25px;
+}
+
 ul {
-    list-style: inside;
-    list-style-type: square; 
+  list-style-type: none;
+}
+
+ul li {
+  margin-bottom: 12px;
+  padding-left: 15px;
+  position: relative;
+}
+
+ul li::before {
+  content: "•";
+  color: var(--brown-800);
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+  position: absolute;
+  left: 0;
 }
 
 ol {
-    list-style: outside;
-    list-style-type: decimal;
-    list-style-position: outside;
+  list-style-type: decimal;
+  list-style-position: outside;
 }
 
 ol li {
-
+  margin-bottom: 12px;
+  padding-left: 20px;
 }
 
-.Ingredients {
+ol li::marker {
+  color: var(--brown-800);
+  font-weight: bold;
+}
 
+/* Nutrition Table */
+.nutrition p {
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+tr {
+  border-bottom: 1px solid var(--stone-150);
+}
+
+tr:last-child {
+  border-bottom: none;
+}
+
+td {
+  padding: 12px 0;
+  padding-left: 30px;
+}
+
+td:first-child {
+  padding-left: 30px;
+}
+
+.value {
+  color: var(--brown-800);
+  font-weight: 700;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  body {
+    padding: 0;
+    background-color: var(--white);
+    align-items: stretch;
+  }
+  
+  main {
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+  }
+  
+  img {
+    border-radius: 0;
     margin-bottom: 30px;
+  }
+  
+  .header, .description, .prep-time, section {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  
+  .prep-time {
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
 }
 
-.Instructions {
-    margin: 20px 0px;
+@media (max-width: 375px) {
+  h1 {
+    font-size: 1.75rem;
+  }
+  
+  .header, .description, .prep-time, section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  .prep-time {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  
+  td:first-child {
+    padding-left: 20px;
+  }
 }
 
-
+/* Print Styles */
+@media print {
+  body {
+    background-color: white;
+    padding: 0;
+  }
+  
+  main {
+    box-shadow: none;
+    margin: 0;
+  }
+}
